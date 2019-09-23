@@ -68,6 +68,8 @@ public class KeyEndpoint {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
+
+
         return new ResponseEntity<>(key, HttpStatus.OK);
     }
 }
