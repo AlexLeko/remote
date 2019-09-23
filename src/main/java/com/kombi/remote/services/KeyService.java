@@ -58,13 +58,7 @@ public class KeyService {
             throw new NotFoundException("Key not found");
         }
 
-
-        return  changeLocation(key);
+        return  key;
     }
 
-    private Key changeLocation(Key key){
-        key.setLongitude();
-        key.setLatitude();
-        keyRepository.save(key);
-    }
 }
