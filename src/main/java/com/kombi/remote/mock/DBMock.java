@@ -29,8 +29,8 @@ public class DBMock {
 
         key.setCar(car);
         key.setStatus(0);
-        key.setLatitude("0");
-        key.setLongitude("0");
+        key.setLatitude("-21.775613");
+        key.setLongitude("-48.170834");
 
         carRepository.save(car);
         keyRepository.save(key);

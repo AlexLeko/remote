@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.websocket.server.PathParam;
@@ -19,7 +20,7 @@ public class KeyEndpoint {
     private KeyService keyService;
 
     @GetMapping("/status/{id}")
-    public ResponseEntity<?> status(@PathParam("id") String id){
+    public ResponseEntity<?> status(@PathVariable("id") String id){
 
         boolean status = false;
 
@@ -33,7 +34,7 @@ public class KeyEndpoint {
     }
 
     @PatchMapping("/lock/{id}")
-    public ResponseEntity<?> lock(@PathParam("id") String id){
+    public ResponseEntity<?> lock(@PathVariable("id") String id){
 
         try{
             keyService.lock(id);
@@ -45,7 +46,7 @@ public class KeyEndpoint {
     }
 
     @PatchMapping("/unlock/{id}")
-    public ResponseEntity<?> unLock(@PathParam("id") String id){
+    public ResponseEntity<?> unLock(@PathVariable("id") String id){
 
         try{
             keyService.unlock(id);
@@ -57,7 +58,7 @@ public class KeyEndpoint {
     }
 
     @GetMapping("/locate/{id}")
-    public ResponseEntity<?> locate(@PathParam("id") String id){
+    public ResponseEntity<?> locate(@PathVariable("id") String id){
 
         Key key = new Key();
 
